@@ -24,7 +24,10 @@ def game():
         name_param = request.args.get('name')
 
     if name_param is None:
-        name_param = ""
+        name_param = "0"
+
+    else:
+        name_param = float(request.args.get('name'))*10
 
     return render_template(
         'game.html',
